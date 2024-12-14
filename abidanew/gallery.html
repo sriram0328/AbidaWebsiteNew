@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Section</title>
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Optional Section Title */
+        .gallery-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 20px 0;
+            color: #333;
+        }
+        
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #7c2148;
+    color: #fff;
+    position: fixed; /* Keep navbar fixed on top */
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures navbar stays on top */
+}
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    gap: 50px;
+    margin-right: 50px;
+}
+
+
+.menu-item {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 15px;
+}
+
+.menu-item:hover {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    border-radius: 30px;
+    font-weight: bolder;
+}
+
+ @media (max-width: 768px) {
+    
+    .menu {
+        display: none; /* Hide the menu by default */
+        flex-direction: column; /* Stack items vertically when shown */
+        gap: 20px;
+        background-color: #7c2148; /* Background for the dropdown menu */
+        position: absolute; /* Position the menu below the navbar */
+        top: 100px; /* Adjust according to navbar height */
+        right: 0;
+        left: 60px;
+        padding: 10px;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+        z-index: 999;
+    }
+    .menu-item {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px 20px; /* Add some padding to make it more clickable */
+        border-radius: 5px;
+        text-align: center; /* Center text in each menu item */
+    }
+
+    .menu-item:hover {
+        background-color: white;
+        color: #7c2148;
+    }
+    .menu.active {
+        display: flex; /* Show menu when active */
+    }
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
+    .hamburger.cross {
+        content: '\2715'; /* Unicode for the cross (✖) */
+        font-size: 24px;
+        right: 15px;
+    } 
+    
+}
+
+ 
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo"><img src="Abida 60px.png" alt=""></div>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger menu -->
+        <div class="menu">
+            <a href="index.html" class="menu-item">Home</a>
+            <a href="academy.html" class="menu-item">Training Institute</a>
+            <a href="gallery.html" class="menu-item">Gallery</a>
+            <a href="contact.html" class="menu-item">Contact Us</a>
+        </div>
+    </nav>
+    
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            const hamburger = document.querySelector('.hamburger');
+    
+            // Toggle menu visibility
+            menu.classList.toggle('active');
+    
+            // Check if the menu is active
+            const isActive = menu.classList.contains('active');
+    
+            // Toggle between hamburger and cross icon
+            hamburger.innerHTML = isActive ? '&#10005;' : '&#9776;'; // Cross (✖) and Hamburger (☰)
+    
+            // Add/remove 'cross' class for positioning
+            if (isActive) {
+                hamburger.classList.add('cross');
+            } else {
+                hamburger.classList.remove('cross');
+            }
+        }
+    </script>
+    
+   
+
+
+    <!-- Gallery Section -->
+    <section>
+        <h2 class="gallery-title">Our Gallery</h2>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 1">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 2">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 3">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 4">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 5">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 6">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 1">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 2">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 3">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 4">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 5">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 6">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 1">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 2">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 3">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 4">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 5">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 6">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 1">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 2">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 3">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 4">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 5">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 6">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 1">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 2">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 3">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 4">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 5">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 6">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 1">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 2">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 3">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 4">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 5">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 6">
+        </div>
+    </section>
+    <script>
+        document.querySelectorAll('.gallery img').forEach(img => {
+            img.addEventListener('click', () => {
+                const lightbox = document.createElement('div');
+                lightbox.id = 'lightbox';
+                lightbox.style.position = 'fixed';
+                lightbox.style.top = '0';
+                lightbox.style.left = '0';
+                lightbox.style.width = '100%';
+                lightbox.style.height = '100%';
+                lightbox.style.background = 'rgba(0, 0, 0, 0.8)';
+                lightbox.style.display = 'flex';
+                lightbox.style.alignItems = 'center';
+                lightbox.style.justifyContent = 'center';
+                lightbox.style.zIndex = '1000';
+    
+                const imgClone = img.cloneNode();
+                imgClone.style.maxWidth = '80%';
+                imgClone.style.maxHeight = '80%';
+                lightbox.appendChild(imgClone);
+    
+                document.body.appendChild(lightbox);
+    
+                lightbox.addEventListener('click', () => {
+                    lightbox.remove();
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>
